@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barber House</title>
+    <link rel="stylesheet" href="images/fonts/style.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +13,33 @@
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <nav class="container">
             <a href="#" class="logo">beauty<span>salon</span>.</a>
             <div class="menu">
-                <a href="">Início</a>
-                <a href="">Sobre</a>
-                <a href="">Serviços</a>
-                <a href="">Depoimentos</a>
-                <a href="">Contato</a>
+                <ul class="grid">
+                    <li><a href="#home" class="title">Início</a></li>
+                    <li><a href="#about" class="title">Sobre</a></li>
+                    <li><a href="#services" class="title">Serviços</a></li>
+                    <li><a href="#testimonials" class="title">Depoimentos</a></li>
+                    <li><a href="#contact" class="title">Contato</a></li>
+                </ul>
             </div>
+            <div class="toggle icon-menu"></div>
+            <div class="toggle icon-close"></div>
         </nav>
     </header>
 
     <main>
+
         <section class="section" id="home">
             <div class="container grid">
                 <div class="image">
-                    <img src="images/banner.svg" alt="" srcset="">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="Mulher sorrindo penteando outra mulher"/>
                 </div>
                 <div class="text">
-                    <h1>Saúde natural para os seus cabelos</h1>
+                    <h2 class="title">Saúde natural para os seus cabelos</h2>
                     <p>Um salão exclusivo em São Paulo, especializado em tratamentos naturais.</p>
                     <a href="" class="button">Agendar um horário</a>
                 </div>
@@ -41,10 +48,52 @@
 
         <div class="divider-1"></div>
 
-        <section class="section">
-            <div class="container"></div>
+        <section class="section" id="about">
+            <div class="container grid">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="title">Sobre nós</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique. Proin quis bibendum diam. Sed consequat nisl laoreet eros ultricies pellentesque. Nullam in est porta, pellentesque massa vitae, vehicula risus. </p>
+                 
+                    <p>In placerat, felis vitae sodales dictum, lacus quam pretium mi, ut pretium urna turpis eu dui. Vestibulum id ullamcorper nibh. Donec luctus, nunc finibus elementum suscipit, tortor augue vulputate sapien, vitae feugiat enim augue sed. </p>
+                   
+                    <p>Quisque id aliquam elit. Suspendisse congue pharetra maximus. Duis rutrum velit a leo euismod dictum. Sed sodales est efficitur arcu tincidunt tincidunt. Curabitur fringilla, risus at feugiat feugiat, nisl nulla tincidunt tellus, elementum elementum lorem nisl eleifend dolor. Nullam eget dui at sem ullamcorper luctus.</p>
+                </div>
+            </div>
         </section>
-    </main>
 
+        <div class="divider-2"></div>
+
+        <section class="section" id="services">
+            <div class="container grid">
+                <header>
+                    <h2 class="title">Serviços</h2>
+                    <p>Com mais de 10 anos no mercado, o <strong>Beautysalon</strong> já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
+                </header>
+                <div class="cards grid">
+                    <div class="card">
+                        <i class="icon-woman-hair"></i>
+                        <h3 class="title">Terapia capilar</h3>
+                        <p>Terapia completa para couro cabeludo e fios, protegendo todos os tipos de cabelos, inclusive os longos e finos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="icon-trim"></i>
+                        <h3 class="title">Cortes</h3>
+                        <p>A nossa equipe é repleta de profissionais renomados, famosos por lançarem tendências com cortes diferenciados e clássicos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="icon-cosmetic"></i>
+                        <h3 class="title">Tratamentos</h3>
+                        <p>O beautysalon conta com diversos tratamentos naturais e totalmente veganos, para qualquer tipo 
+                            de cabelo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
