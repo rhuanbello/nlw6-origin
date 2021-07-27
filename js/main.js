@@ -21,16 +21,16 @@ for (const link of links) {
 
 // Adicionar sombra no header ao scrollar página
 
-const header = document.querySelector("#header")
-const navHeight = header.offsetHeight
+function changeHeader() {
+    const header = document.querySelector("#header")
+    const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function() {
     if(window.scrollY >= navHeight) {
         header.classList.add('scroll')
     } else {
         header.classList.remove('scroll')
     }
-})
+}
 
 // Slider
 
@@ -57,8 +57,28 @@ scrollReveal.reveal(`
     #home .text, #home .image,
     #about .image, #about .text,
     #services header, #services .card,
-    #testimonials header, #testimonials .testimonials
-    #contact .text, #contact .links
+    #testimonials header, #testimonials .testimonials,
+    #contact .text, #contact .links,
+    footer .brand, footer .social
     `,
     { interval: 100}
 )
+
+// Back to Top
+
+function backToTheTop () {
+    const backToTop = document.querySelector('a.back-to-top')
+    const about = document.querySelector("#about")
+    const aboutHeight = about.offsetHeight
+
+    if(window.scrollY >= aboutHeight) {
+        backToTop.classList.add('show')
+    } else {
+        backToTop.classList.remove('show')
+    }
+}
+
+window.addEventListener('scroll', function() {
+    changeHeader()
+    backToTheTop()
+})

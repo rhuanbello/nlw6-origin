@@ -126,6 +126,10 @@ main {
     color: var(--base-color);
 }
 
+.logo-alt span {
+    color: var(--body-color);
+}
+
 nav { 
     height:  var(--header-height);
     display: flex;
@@ -443,4 +447,67 @@ nav.show .icon-close {
 
 #contact ul li i {
     color: var(--base-color);
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--base-color);
+
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+}
+
+footer .brand p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color-light);
+}
+
+footer i {
+    font-size: 2.4rem;
+    color: var(--text-color-light);
+
+}
+
+footer .social{
+    display: flex;
+    gap: 3.2rem;
+}
+
+footer .social a {
+    transition: .3s;   
+}
+
+footer .social a:hover {
+    transform: translateY(-15px);
+}
+
+/* Back to Top */
+
+.back-to-top {
+    background-color: var(--base-color);
+    color: --text-color-light;
+
+    position: fixed;
+    right: 1.6rem;
+    bottom: 1.6rem;
+
+    padding: .8rem;
+    clip-path: circle();
+    line-height: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: .3s;
+    transform: translateY(100%);
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
