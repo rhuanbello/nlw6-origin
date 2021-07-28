@@ -19,8 +19,9 @@ img {
 
 html {
     font-size: 62.5%;
-    --header-height: 7.2rem;
 
+    --header-height: 7.2rem;
+ 
     --hue: 159;
     --base-color: hsl(var(--hue) 36% 57%);
     --base-color-second: hsl(var(--hue) 65% 88%);
@@ -29,18 +30,26 @@ html {
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
+   
+
+    --title-font-size: 3rem;
+    --subtitle-font-size: 1.6rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
+
     scroll-behavior: smooth;
 }
 
 body {
-    font: 400 1.6rem 'DM Sans', sans-serif;
+    font: 400 1.6rem var(--body-font);
     color: var(--text-color);
     background-color: var(--body-color);
     -webkit-font-smoothing: antialiased;
 }
 
 .title {
-    font: 700 3rem 'Poppins', sans-serif;
+    font: 700 var(--title-font-size) var(--title-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -53,7 +62,7 @@ body {
     color: var(--text-color-light);
     display: inline-flex;
     border-radius: .4rem;
-    font: 500 1.6rem 'DM Sans', sans-serif;
+    font: 500 1.6rem var(--body-font);
     transition: background 0.3s;
 }
 
@@ -81,11 +90,15 @@ body {
 }
 
 .section {
-    padding: 8rem 0;
+    padding: calc(8rem + var(--header-height)) 0;
 }
 
 .section .title {
     margin-bottom: 1.6rem;
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
 }
 
 .section header {
@@ -113,12 +126,8 @@ body {
     box-shadow: .2rem .2rem 2rem rgba(0, 0, 0, 0.15);
 }
 
-main {
-    margin-top: calc(var(--header-height) + 1rem);
-}
-
 .logo {
-    font: 700 2.1rem 'Poppins', sans-serif;
+    font: 700 2.1rem var(--title-font);
     color: var(--title-color);
 }
 
@@ -148,7 +157,8 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--base-color);
 
 }
@@ -165,8 +175,10 @@ nav ul li a::after {
     transition: width .3s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
     width: 100%;
+    
 }
 
 nav .menu {
@@ -456,6 +468,10 @@ footer {
 
 }
 
+footer.section {
+    padding: 6.4rem 0;
+}
+
 footer .logo {
     display: inline-block;
     margin-bottom: 2.4rem;
@@ -510,4 +526,126 @@ footer .social a:hover {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responsivo */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        padding: 16rem 0;
+    }
+    
+    .section header {
+        max-width: 52.3rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        height: 5rem;
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    nav .menu ul li a.title {
+        font: 400 1.6rem var(--body-font);
+        -webkit-font-smoothing: antialiased;
+
+    }
+
+    nav .menu ul li a.title.active {
+        font-weight: bold;
+        -webkit-font-smoothing: auto;
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+    
+    main {
+        margin-top: var(--header-height);
+    }
+
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto; 
+    }
+
+    #home .image {
+        order: 1;
+    }
+    
+    #home .image::before {
+        right: -2.7%;
+    }
+    
+    #home .text {
+        order: 0;
+        max-width: 40rem;
+        text-align: left;
+    }
+    
+    #about .container {
+        grid-auto-flow: column;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #about .image::before {
+        left: -10%;
+    }
+    
+    #contact .container {
+        grid-auto-flow: column;
+        align-items: center;
+    }
+
+    #contact .text {
+        max-width: 32rem;
+    }
+
+    footer .container {
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer.section {
+        padding: 6rem 0;
+    }
+
+    footer .logo {
+        font-size: 3rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+    html{
+        --title-font-size: 3.6rem;
+        --subtitle-font-size: 1.8rem;
+    }
+
 }
