@@ -1,5 +1,3 @@
-# Barber House
-
 ![https://i.imgur.com/qzuJz1h.png](https://i.imgur.com/qzuJz1h.png)
 
 Você pode visualizar o projeto [aqui](https://rhuanbello.github.io/nlw6-origin/).
